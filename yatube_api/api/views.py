@@ -6,7 +6,8 @@ from posts.models import Group, Post, Comment, Follow
 from rest_framework.pagination import LimitOffsetPagination
 
 from .permissions import IsAuthorOrReadOnly
-from .serializers import PostSerializer, GroupSerializer, CommentSerializer, FollowSerializer
+from .serializers import (PostSerializer, GroupSerializer,
+                          CommentSerializer, FollowSerializer)
 
 
 class PostViewSet(viewsets.ModelViewSet):
