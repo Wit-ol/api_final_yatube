@@ -60,11 +60,10 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 
 class FollowViewSet(viewsets.ModelViewSet):
-    queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     permission_classes = (permissions.IsAuthenticated,)
     filter_backends = (filters.SearchFilter,)
-    search_fields = ('user__username', 'following__username',)
+    search_fields = ('=user__username', '=following__username',)
 
     def get_queryset(self):
         return Follow.objects.filter(
